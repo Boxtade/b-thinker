@@ -1,0 +1,217 @@
+@font-face { 	font-family: "theme";
+    src:url(../font/FredokaOne-Regular.ttf); }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: theme;
+    background-color: rgba(250, 220, 122, 0.25);
+}
+
+header{
+    background: linear-gradient(to bottom, rgba(129, 120, 101,0.3) 0%,rgba(129, 120, 101,0.75) 50%,rgba(129, 120, 101,1) 100%);
+}
+
+.floatleft{
+    float: left;
+}
+
+.floatRight{
+    float:right;
+}
+
+.delete{
+    width: 10%;
+    float: right;
+}
+
+.update{
+    width: 10%;
+    float: right;
+}
+
+
+#progressbar
+{
+    clear: both;
+    margin-top: 30%;
+
+}
+
+#progressbar .ui-progressbar-value {
+    background-color: rgba(254, 206, 47, 0.25);
+}
+
+.btn_dialog{
+    float: right;
+}
+
+#post_title{
+    width: 100%;
+}
+
+#post_task{
+    display: block;
+    width: 100%;
+    height: 300px;
+    resize: none;
+}
+
+.post_text{
+    width: 194px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 70%;
+    display: block;
+}
+
+p{
+	float: left;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    word-wrap: break-word;
+}
+
+#title {
+    width: 40%;
+}
+
+@media screen and (min-width: 1030px){
+    #title{
+        margin: 0;
+        display: inline;
+        font-style: italic;
+        font-variant: small-caps;
+        font-size: 3em;
+        color: rgb(255, 250, 232);
+        margin-left: 5%;
+    }
+
+    #btn_add{
+        left: 93%;
+        position: absolute;
+        width: 51px;
+        visibility: hidden;
+        top: 2px;
+    }
+
+    #wrapper{
+        clear: both;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .post{
+        width: 200px;
+        height: 100px;
+        background-color: rgba(254, 206, 47, 0.75);
+        float: left;
+        margin: 2px;
+    }
+
+    .ui-dialog{
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    #title{
+        margin: 0;
+        display: inline;
+        font-style: italic;
+        font-variant: small-caps;
+        font-size: 3em;
+        color: rgb(255, 250, 232);
+        margin-left: 5%;
+    }
+
+    #btn_add{
+        left: 89%;
+        position: absolute;
+        width: 51px;
+        visibility: hidden;
+        top: 2px;
+        
+    }
+
+    #wrapper{
+        clear: both;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .post{
+        width: 200px;
+        height: 100px;
+        background-color: rgba(254, 206, 47, 0.75);
+        float: left;
+        margin: 2px;
+    }
+
+    #post_title{
+        height: 30px;
+        font-size: 2em;
+    }
+
+    #post_task{
+        font-size: 2em;
+    }
+
+    button{
+        padding: 1%;
+        margin: 1%;
+    }
+
+    .ui-dialog{
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    #btn_add{
+        left: 72%;
+        position: absolute;
+        width: 51px;
+        visibility: hidden;
+        top: 30px;
+    }
+
+    .post{
+        width: 100%;
+        height: 135px;
+    }
+
+    .post_text{
+        width: 100%;
+        height: 60%;
+        display: block;
+    }
+
+    #post_title{
+        height: 30px;
+        font-size: 2em;
+    }
+
+    #post_task{
+        font-size: 2em;
+    }
+
+    button{
+        padding: 1%;
+        margin: 1%;
+    }
+}
+
