@@ -2,11 +2,12 @@
  * Created by Kevin on 2015-10-13.
  */
 define([
+    'jquery',
     'underscore',
     'backbone',
     'text!../../templates/task_template.html',
     '../collections/CollectionTasks'
-],function(_,Backbone,TaskTemplate,CollectionTasks){
+],function($,_,Backbone,TaskTemplate,CollectionTasks){
     var TasksView = Backbone.View.extend({
         el: $('#wrapper'),
         template: _.template(TaskTemplate),

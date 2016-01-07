@@ -4,8 +4,6 @@
 
 window.url = "boxtade.com";
 
-//window.onload = initialize;
-
 define([
     'underscore',
     'backbone',
@@ -13,6 +11,11 @@ define([
 ],
     function(_, Backbone, Router){
         var initialize = function() {
+            //initialize_url();
+            Router.initialize();
+        };
+
+        var initialize_url = function(){
             var base_url = "http://"+window.url+"/b-thinker/index.html";
             var actual_url = window.location.href;
             var parse_url = actual_url.split("/").reverse()[0];
@@ -22,7 +25,6 @@ define([
             if(parse_url != "index.html")
                 window.location.href = base_url;
             console.log(actual_url);
-            Router.initialize();
         };
 
         return {

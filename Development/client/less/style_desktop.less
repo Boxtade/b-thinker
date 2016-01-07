@@ -1,0 +1,106 @@
+@import "helper.less";
+@import "theme.less";
+
+@media screen and (min-width: 1030px) {
+  #btn_add{
+    height: 100%;
+    padding: 5px;
+    padding-left: 60px;
+    .floatright;
+  }
+
+  #btn_account{
+    height: 100%;
+    padding: 5px;
+    padding-right: 50px;
+    margin-left: 50px;
+    .floatright
+  }
+
+  #title{
+    .floatleft;
+    height: 100%;
+    margin-top: 4px;
+    margin-left: 50px;
+    color: @color_third;
+  }
+
+  .navbar-inverse{
+    height: 5%;
+    background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
+  }
+
+  nav label{
+    .floatright;
+    color: @color_third;
+    .italic;
+    margin-top: 1.5%;
+  }
+
+
+
+
+
+  .delete{
+    width: 10%;
+    float: right;
+  }
+
+  .update{
+    width: 10%;
+    float: right;
+  }
+
+  #post_title{
+    width: 100%;
+  }
+
+  #post_task{
+    display: block;
+    width: 100%;
+    height: 300px;
+    resize: none;
+  }
+
+  .post_text{
+    width: 194px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 70%;
+    display: block;
+  }
+
+  p{
+    float: left;
+    display: block;
+    margin: 0;
+    padding-left: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    word-wrap: break-word;
+    .ultraBold;
+  }
+
+  #wrapper{
+    clear: both;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+  }
+
+  .post{
+    width: 200px;
+    height: 100px;
+    background-color: @color_light_accent;
+    float: left;
+    margin: 2px;
+  }
+}
