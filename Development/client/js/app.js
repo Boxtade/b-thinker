@@ -4,15 +4,30 @@
 
 window.url = "boxtade.com";
 
-window.onload = initialize;
+//window.onload = initialize;
 
-function initialize() {
-    $("#progressbar").progressbar({
-        value: false
-    });
-    headerView = new HeaderView();
-    newTaskView = new NewTaskView();
-    updateTaskView = new UpdateTaskView();
-    $("#btn_add")[0].style.visibility = "visible";
-    tasksView = new TasksView();
-}
+define([
+    'underscore',
+    'backbone',
+    'router'
+],
+    function(_, Backbone, Router){
+        var initialize = function() {
+            var base_url = "http://"+window.url+"/b-thinker/index.html";
+            var actual_url = window.location.href;
+            var parse_url = actual_url.split("/").reverse()[0];
+
+            console.log(parse_url);
+
+            if(parse_url != "index.html")
+                window.location.href = base_url;
+            console.log(actual_url);
+            Router.initialize();
+        };
+
+        return {
+            initialize: initialize
+        };
+    }
+);
+

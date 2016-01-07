@@ -1,0 +1,18 @@
+
+.color_theme{
+    background-color: #eee;
+    background-image: none;
+}
+
+.logo{
+    height: 98%;
+}
+
+body{
+    padding: 0;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-right: 5px;
+}

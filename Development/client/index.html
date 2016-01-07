@@ -14,69 +14,58 @@
     <link rel="stylesheet" href="js/libs/jquery-ui-1.11.4.custom/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
     <script src="js/libs/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-    <script src="js/libs/underscore.js"></script>
-    <script src="js/libs/backbone.js"></script>
+    <!--<script src="js/libs/underscore.js"></script>-->
+    <!--<script src="js/libs/backbone.js"></script>-->
 
-    <script type="text/x-underscore-template" id="header_template">
-        <h1 id="title" class="floatleft">Pense-bête</h1>
-        <input id="btn_add" class="floatleft" src="img/add.png" type="image">
-        <div style="clear: both"></div>
-    </script>
+    <!--<script type="text/x-underscore-template" id="header_template">-->
+        <!--<h1 id="title" class="floatleft">Pense-bête</h1>-->
+        <!--<input id="btn_add" class="floatleft" src="img/add.png" type="image">-->
+        <!--<div style="clear: both"></div>-->
+    <!--</script>-->
 
-    <script type="text/x-underscore-template" id="newTask_template">
-        <h3>Titre</h3>
-        <input type="text" id="post_title"  >
-        <h3>Tâches</h3>
-        <textarea id="post_task"></textarea>
-        <button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_new_accept">Appliquer</button>
-        <button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_cancel">Annuler</button>
-        <p class="message"></p>
-    </script>
+    <!--<script type="text/x-underscore-template" id="newTask_template">-->
+        <!--<h3>Titre</h3>-->
+        <!--<input type="text" id="post_title"  >-->
+        <!--<h3>Tâches</h3>-->
+        <!--<textarea id="post_task"></textarea>-->
+        <!--<button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_new_accept">Appliquer</button>-->
+        <!--<button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_cancel">Annuler</button>-->
+        <!--<p class="message"></p>-->
+    <!--</script>-->
 
-    <script type="text/x-underscore-template" id="updateTask_template">
-        <h3>Titre</h3>
-        <input type="text" id="post_title" value="<%= po.title %>"  >
-        <h3>Tâches</h3>
-        <textarea id="post_task"><%= po.text %></textarea>
-        <button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_update_accept">Appliquer</button>
-        <button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_cancel">Annuler</button>
-        <p class="message"></p>
-    </script>
+    <!--<script type="text/x-underscore-template" id="updateTask_template">-->
+        <!--<h3>Titre</h3>-->
+        <!--<input type="text" id="post_title" value="<%= po.title %>"  >-->
+        <!--<h3>Tâches</h3>-->
+        <!--<textarea id="post_task"><%= po.text %></textarea>-->
+        <!--<button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_update_accept">Appliquer</button>-->
+        <!--<button class="floatRight ui-widget ui-state-default ui-corner-all ui-button-text-only" id="btn_cancel">Annuler</button>-->
+        <!--<p class="message"></p>-->
+    <!--</script>-->
 
-    <script type="text/x-underscore-template" id="post_template">
-        <% _.each(tasks,function(task){ %>
-        <div  class="post" id="<%= task.id %>">
-            <p><%= task.title %></p>
-            <input id="<%= task.id %>" class="delete" src="img/delete.png" type="image">
-            <input id="<%= task.id %>" class="update" src="img/update.png" type="image">
-            <textarea class="post_text" disabled ><%= task.text %></textarea>
-        </div>
-        <% }); %>
-    </script>
+    <!--<script type="text/x-underscore-template" id="post_template">-->
+        <!--<% _.each(tasks,function(task){ %>-->
+        <!--<div  class="post" id="<%= task.id %>">-->
+            <!--<p><%= task.title %></p>-->
+            <!--<input id="<%= task.id %>" class="delete" src="img/delete.png" type="image">-->
+            <!--<input id="<%= task.id %>" class="update" src="img/update.png" type="image">-->
+            <!--<textarea class="post_text" disabled ><%= task.text %></textarea>-->
+        <!--</div>-->
+        <!--<% }); %>-->
+    <!--</script>-->
 
-
-    <script src="js/app.js"></script>
-    <script src="js/models/Task.js"></script>
-    <script src="js/collections/CollectionTasks.js"></script>
-    <script src="js/views/HeaderView.js"></script>
-    <script src="js/views/NewTaskView.js"></script>
-    <script src="js/views/UpdateTaskView.js"></script>
-    <script src="js/views/TasksView.js"></script>
-    <script src="js/router.js"></script>
-    <script>
-        var base_url = "http://"+window.url+"/b-thinker/index.html";
-        var actual_url = window.location.href;
-        var parse_url = actual_url.split("/").reverse()[0];
-
-        console.log(parse_url);
-     
-        if(parse_url != "index.html")
-           window.location.href = base_url;
-        console.log(actual_url);
-    </script>
+    <script data-main="js/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+    <!--<script src="js/app.js"></script>-->
+    <!--<script src="js/models/Task.js"></script>-->
+    <!--<script src="js/collections/CollectionTasks.js"></script>-->
+    <!--<script src="js/views/HeaderView.js"></script>-->
+    <!--<script src="js/views/NewTaskView.js"></script>-->
+    <!--<script src="js/views/UpdateTaskView.js"></script>-->
+    <!--<script src="js/views/TasksView.js"></script>-->
+    <!--<script src="js/router.js"></script>-->
 </head>
 <body>
-    <header></header>
+    <header id="header"></header>
     <div>
         <div id="progressbar"></div>
     </div>
