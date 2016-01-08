@@ -1,32 +1,46 @@
-@import "helper.less";
-@import "theme.less";
 
 @media screen and (min-width: 1030px) {
   #btn_add{
-    height: 100%;
-    padding: 5px;
-    padding-left: 60px;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
     .floatright;
+    background-size: contain;
+  }
+
+  input[id="btn_add"]{
+    background: url('../img/add_btn.png') no-repeat;
+  }
+
+  input[id="btn_account"]{
+    background: url('../img/account_btn.png') no-repeat;
   }
 
   #btn_account{
-    height: 100%;
-    padding: 5px;
-    padding-right: 50px;
-    margin-left: 50px;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+    float: right;
+    background-size: contain;
     .floatright
   }
 
   #title{
     .floatleft;
     height: 100%;
+    width: 50rem;
     margin-top: 4px;
     margin-left: 50px;
-    color: @color_third;
+    background-size: contain;
+  }
+
+  img[id="title"]{
+    background: url('../img/title.png') no-repeat;
   }
 
   .navbar-inverse{
-    height: 5%;
+    padding-right: 50px;
+    height: 6rem;
     background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
   }
 
@@ -37,8 +51,17 @@
     margin-top: 1.5%;
   }
 
+  #btn_new_accept{
+    .button;
+  }
 
+  #btn_update_accept{
+    .button;
+  }
 
+  #btn_cancel{
+    .button;
+  }
 
 
   .delete{
@@ -51,12 +74,25 @@
     float: right;
   }
 
+  #edition_box{
+    border: solid 2px @color_second;
+    border-radius: 15px;
+    padding: 15px;
+  }
+
   #post_title{
     width: 100%;
+    font-family: @font_regular;
+    background-color: @color_third;
+    .bold;
+    border: none;
   }
 
   #post_task{
+    font-family: @font_regular;
+    background-color: @color_third;
     display: block;
+    border: none;
     width: 100%;
     height: 300px;
     resize: none;
@@ -99,7 +135,7 @@
   .post{
     width: 200px;
     height: 100px;
-    background-color: @color_light_accent;
+    background-color: @color_accent;
     float: left;
     margin: 2px;
   }

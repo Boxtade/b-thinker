@@ -16,16 +16,12 @@ define([
             'click .update': 'updateTask'
         },
         initialize: function () {
-            $("#progressbar")[0].style.display = "block";
-            $("#btn_add")[0].style.visibility = "hidden";
             _.bindAll(this, 'render');
             var self = this;
             this.collection = new CollectionTasks();
             this.collection.fetch().complete(function(){self.render();});
         },
         render: function(){
-            $("#progressbar")[0].style.display = "none";
-            $("#btn_add")[0].style.visibility = "visible";
             this.$el.html(this.template({
                 tasks: this.collection.toJSON()
             }));

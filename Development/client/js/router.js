@@ -26,23 +26,28 @@ define([
     var initialize = function(){
         var app_router = new AppRouter;
         headerView = new HeaderView();
+        headerView.render("");
         newTaskView = new NewTaskView();
         updateTaskView = new UpdateTaskView();
         tasksView = new TasksView();
 
+
         app_router.on('route:newTask', function () {
+            headerView.render("newTask");
             if(newTaskView == undefined)
                 tasksView.initialize();
             newTaskView.render();
         });
 
         app_router.on('route:updateTask', function (id) {
+            headerView.render("updateTask");
             if(tasksView != undefined)
                 tasksView.destroy();
             updateTaskView.render(id);
         });
 
         app_router.on('route:Tasks', function () {
+            headerView.render("");
             if(newTaskView != undefined)
                 newTaskView.destroy();
 

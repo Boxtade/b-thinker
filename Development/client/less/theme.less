@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900,900italic,700italic,500italic,500,400italic,300italic,300,100italic,100);
+@import "helper.less";
 
-@color_accent: #aad400;
+@color_accent: #d0f14e;
 @color_primary: #191919;
 @color_second: #4c4c4c;
 @color_third: #f6f7f0;
-@color_light_accent: #e5ff80;
+
 @font_regular: 'Roboto', sans-serif;
 
 
@@ -15,6 +16,21 @@ body{;
   background-color: @color_third;
   overflow-x: hidden;
   overflow-y: visible;
+}
+
+*:focus {
+  outline: none;
+}
+
+.button{
+  background-color: @color_second;
+  font-family: @font_regular;
+  .bold;
+  color:@color_third;
+  border: none;
+  .floatright;
+  margin: 5px;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar {
