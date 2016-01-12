@@ -8,7 +8,7 @@ define([
 ],function(_,Backbone,Task){
     var CollectionTasks = Backbone.Collection.extend({
         model: Task,
-        url: "http://"+window.url+":5000/tasks",
+        url: "http://"+URL+":5000/tasks",
         parse: function(response) {
             return response.tasks;
         }

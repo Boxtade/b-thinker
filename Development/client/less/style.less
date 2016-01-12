@@ -1,2 +1,62 @@
 @import "theme.less";
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: @font_regular;
+  background-color: @color_third;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:hover {
+  outline: none;
+}
+
+#wrapper::after{
+  .clearboth;
+}
+
+.button{
+  background-color: @color_second;
+  font-family: @font_regular;
+  .bold;
+  color:@color_third;
+  border: none;
+  .floatright;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+input[id="btn_add"]{
+  background: url(@img_add_btn) no-repeat;
+}
+
+input[id="btn_account"]{
+  background: url(@img_account_btn) no-repeat;
+}
+
+img[id="title"]{
+  background: url(@img_title) no-repeat;
+}
+
+a{
+  color:@color_third;
+}
+
+a:hover{
+  color:@color_accent;
+}
+
 @import "style_desktop.less";
+@import "style_tablet.less";
+@import "style_phone.less";

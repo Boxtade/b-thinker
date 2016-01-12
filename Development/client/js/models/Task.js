@@ -7,7 +7,7 @@ define([
     'backbone'
 ],function(_,Backbone){
     var Task = Backbone.Model.extend({
-        url: "http://"+window.url+":5000/tasks",
+        url: "http://"+URL+":5000/tasks",
         defaults:{
             id:"",
             task:"",
@@ -21,7 +21,7 @@ define([
             Backbone.Model.apply( this, arguments );
         },
         destroy: function (options) {
-            var opts = _.extend({url: 'http://'+window.url+':5000/tasks/' + this.id}, options || {});
+            var opts = _.extend({url: 'http://'+URL+':5000/tasks/' + this.id}, options || {});
             return Backbone.Model.prototype.destroy.call(this, opts);
         },
         set: function(attributes, options) {
@@ -37,7 +37,7 @@ define([
             return string.split("*/*");
         },
         fetch:function(options) {
-            var opts = _.extend({url: 'http://'+window.url+':5000/tasks/' + this.id}, options || {});
+            var opts = _.extend({url: 'http://'+URL+':5000/tasks/' + this.id}, options || {});
             return Backbone.Model.prototype.fetch.call(this, opts);
         }
     });

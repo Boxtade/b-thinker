@@ -16,12 +16,10 @@ define([
             'click #btn_cancel': 'cancelTask'
         },
         render: function (id) {
-            $("#progressbar")[0].style.display = "block";
             var self = this;
             updatePost = new Task({id:id});
             updatePost.fetch().complete(function() {
                 updatePost.set(updatePost.toJSON().task);
-                $("#progressbar")[0].style.display = "none";
                 self.$el.html(self.template({po:updatePost.attributes}));
             });
         },
@@ -30,7 +28,7 @@ define([
             {
                 taskDetail = {task:$("#post_title")[0].value+"*/*"+$("#post_task")[0].value};
                 updatePost.set(taskDetail);
-                updatePost.url = 'http://'+window.url+':5000/tasks/' + updatePost.attributes.id;
+                updatePost.url = 'http://'+URL+':5000/tasks/' + updatePost.attributes.id;
                 var self = this;
                 updatePost.save().complete(function(){
                     self.navigate('Tasks', {trigger: true});

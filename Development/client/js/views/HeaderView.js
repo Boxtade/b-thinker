@@ -6,26 +6,26 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!../../templates/header_template.html'
-],function($,_,Backbone,HeaderTemplate){
+    'text!../../templates/header_template.html',
+    "views/FooterView"
+],function($,_,Backbone,HeaderTemplate,FooterView){
     var HeaderView = Backbone.View.extend({
-        el: $("#header"),
+        el: $("header"),
 
         template: _.template(HeaderTemplate),
         events: {
             'click #btn_add': 'newTask'
         },
         initialize: function () {
+            new FooterView();
         },
         render: function(route){
             this.$el.html(this.template());
             if(route == "newTask" || route == "updateTask"){
-                $("#btn_add")[0].style.visibility = "hidden";
-                $("#label_btn_add")[0].style.visibility = "hidden";
+                $("#wrapper_add_btn")[0].style.visibility = "hidden";
             }
             else{
-                $("#btn_add")[0].style.visibility =  "visible";
-                $("#label_btn_add")[0].style.visibility =  "visible";
+                $("#wrapper_add_btn")[0].style.visibility =  "visible";
             }
         },
         newTask: function(){

@@ -2,21 +2,22 @@
  * Created by Kevin on 2015-10-13.
  */
 
-window.url = "boxtade.com";
+
 
 define([
     'underscore',
     'backbone',
-    'router'
+    'router',
+    'config'
 ],
-    function(_, Backbone, Router){
+    function(_, Backbone, Router,Config){
         var initialize = function() {
             //initialize_url();
             Router.initialize();
         };
 
         var initialize_url = function(){
-            var base_url = "http://"+window.url+"/b-thinker/index.html";
+            var base_url = "http://"+URL+"/b-thinker/index.html";
             var actual_url = window.location.href;
             var parse_url = actual_url.split("/").reverse()[0];
 
