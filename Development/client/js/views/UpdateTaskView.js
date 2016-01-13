@@ -17,29 +17,19 @@ define([
         },
         render: function (id) {
             var self = this;
-            updatePost = new Task({id:id});
+            updatePost = new Task();
+            updatePost.set_id(id);
             updatePost.fetch().complete(function() {
                 updatePost.set(updatePost.toJSON().task);
                 self.$el.html(self.template({po:updatePost.attributes}));
+                self.style.render();
             });
         },
         acceptTask: function() {
-            if ($("#post_title")[0].value != ""&& $("#post_task")[0].value != "")
-            {
-                taskDetail = {task:$("#post_title")[0].value+"*/*"+$("#post_task")[0].value};
-                updatePost.set(taskDetail);
-                updatePost.url = 'http://'+URL+':5000/tasks/' + updatePost.attributes.id;
-                var self = this;
-                updatePost.save().complete(function(){
-                    self.navigate('Tasks', {trigger: true});
-                });
-            }
-            else
-                $(".message").html("Veuillez remplir tous les champs.");
-
+            updatePost.save_task(updatePost.attributes.id);
         },
         cancelTask:function(){
-            this.navigate('Tasks', {trigger: true});
+            this.navigate('tasks', {trigger: true});
         },
         destroy:function(){
             this.$el.html("");

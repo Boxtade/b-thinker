@@ -7,29 +7,39 @@ define([
     'underscore',
     'backbone',
     'text!../../templates/header_template.html',
-    "views/FooterView"
-],function($,_,Backbone,HeaderTemplate,FooterView){
+    "views/FooterView",
+    '../models/Task'
+],function($,_,Backbone,HeaderTemplate,FooterView, Task){
     var HeaderView = Backbone.View.extend({
         el: $("header"),
 
         template: _.template(HeaderTemplate),
         events: {
-            'click #btn_add': 'newTask'
+            'click #btn_add': 'newTask',
+            'click #btn_apply_img': 'acceptTask',
+            'click #btn_cancel_img': 'cancelTask'
         },
         initialize: function () {
             new FooterView();
+            var self = this;
+            $( window ).resize(function(){self.style.render()});
         },
-        render: function(route){
+        render: function(){
             this.$el.html(this.template());
-            if(route == "newTask" || route == "updateTask"){
-                $("#wrapper_add_btn")[0].style.visibility = "hidden";
-            }
-            else{
-                $("#wrapper_add_btn")[0].style.visibility =  "visible";
-            }
+
         },
         newTask: function(){
             this.navigate('newTask', {trigger: true});
+        },
+        acceptTask:function(){
+            var route = this.style.getPathUrl();
+            switch (route[0]){
+                case "#updateTask": new Task().save_task(route[1]);break;
+                case "#newTask": new Task().save_task();break;
+            }
+        },
+        cancelTask:function(){
+            this.navigate('tasks', {trigger: true});
         }
     });
 

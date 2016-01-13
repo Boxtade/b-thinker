@@ -16,26 +16,17 @@
                 'click #btn_cancel': 'cancelTask'
             },
             initialize: function () {
+                this.task = new Task();
             },
             render: function(){
                 this.$el.html(this.template());
+                this.style.render();
             },
             acceptTask: function() {
-                if ($("#post_title")[0].value != ""&& $("#post_task")[0].value != "")
-                {
-                    taskDetail = {title: $("#post_title")[0].value, text:$("#post_task")[0].value};
-                    var newPost = new Task(taskDetail);
-                    var self = this;
-                    newPost.save(taskDetail,{type: 'POST'}).complete(function(){
-                        self.navigate('Tasks', {trigger: true});
-                    });
-                }
-                else
-                    $(".message").html("Veuillez remplir tous les champs.");
-
+                this.task.save_task();
             },
             cancelTask:function(){
-                this.navigate('Tasks', {trigger: true});
+                this.navigate('tasks', {trigger: true});
             },
             destroy:function(){
                 this.$el.html("");

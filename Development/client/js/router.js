@@ -14,9 +14,9 @@ define([
     var AppRouter = Backbone.Router.extend({
         routes: {
             "newTask": "newTask",
-            "Tasks": "Tasks",
+            "Tasks": "tasks",
             "updateTask/:id": "updateTask",
-            '*actions': "Tasks"
+            '*actions': "tasks"
         },
         route: function(route, name, callback) {
             return Backbone.Router.prototype.route.call(this, route, name, callback);
@@ -46,7 +46,7 @@ define([
             updateTaskView.render(id);
         });
 
-        app_router.on('route:Tasks', function () {
+        app_router.on('route:tasks', function () {
             headerView.render("");
             if(newTaskView != undefined)
                 newTaskView.destroy();
@@ -58,6 +58,10 @@ define([
         });
 
         Backbone.View.prototype.navigate = function (loc) {
+            app_router.navigate(loc, true);
+        };
+
+        Backbone.Model.prototype.navigate = function (loc) {
             app_router.navigate(loc, true);
         };
 

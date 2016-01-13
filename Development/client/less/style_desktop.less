@@ -1,22 +1,32 @@
 
-@media screen and (min-width: 1030px){
-  #btn_add{
-    height: 5rem;
-    width: 5rem;
-    margin: 0.5rem;
+@media screen and (min-width: @w_desktop){
+
+  .btn_img{
     .floatright;
     background-size: contain;
-  }
-
-
-
-  #btn_account{
     height: 5rem;
     width: 5rem;
     margin: 0.5rem;
-    float: right;
-    background-size: contain;
-    .floatright
+  }
+
+  #btn_add{
+    .displayinline;
+    .btn_img;
+  }
+
+  #btn_account{
+    .displaynone;
+    .btn_img;
+  }
+
+  #btn_cancel_img{
+    .displaynone;
+    .btn_img;
+  }
+
+  #btn_apply_img{
+    .displaynone;
+    .btn_img;
   }
 
   #title{
@@ -27,8 +37,6 @@
     margin-left: 50px;
     background-size: contain;
   }
-
-
 
   .navbar-inverse{
     padding-right: 50px;
@@ -73,15 +81,15 @@
   }
 
   #btn_new_accept{
-    .button;
+    .btn_std;
   }
 
   #btn_update_accept{
-    .button;
+    .btn_std;
   }
 
   #btn_cancel{
-    .button;
+    .btn_std;
   }
 
   .delete{

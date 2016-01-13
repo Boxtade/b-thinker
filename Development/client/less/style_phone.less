@@ -1,9 +1,52 @@
-@media screen and (max-width: 560px) {
-  #btn_add{
-    height: 3rem;
-    width: 3rem;
+@media screen and (max-width: @w_tablet) {
+
+  .btn_img{
     .floatright;
     background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+
+  .btn_post{
+    width: 8%;
+    float: right;
+
+  }
+
+  #btn_add{
+    .btn_img;
+    .displayinline;
+  }
+
+  #btn_cancel_img{
+    .displaynone;
+    .btn_img;
+  }
+
+  #btn_apply_img{
+    .displaynone;
+    .btn_img;
+  }
+
+  #btn_new_accept{
+    .displaynone;
+  }
+
+  #btn_update_accept{
+    .displaynone;
+  }
+
+  #btn_cancel{
+    .displaynone;
+  }
+
+  .delete{
+    .btn_post;
+  }
+
+  .update{
+    .btn_post;
   }
 
   #label_btn_add{
@@ -38,7 +81,7 @@
   #footer{
     background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
     height: 4rem;
-    min-height: 3rem;
+    min-height: 4rem;
     position: fixed;
     bottom:0px;
     right: 0px;
@@ -67,27 +110,7 @@
     margin-top: 1.5%;
   }
 
-  #btn_new_accept{
-    .button;
-  }
 
-  #btn_update_accept{
-    .button;
-  }
-
-  #btn_cancel{
-    .button;
-  }
-
-  .delete{
-    width: 8%;
-    float: right;
-  }
-
-  .update{
-    width: 8%;
-    float: right;
-  }
 
   #edition_box{
     border: solid 2px @color_second;
@@ -110,7 +133,7 @@
     display: block;
     border: none;
     width: 100%;
-    height: 300px;
+    height: 94%;
     resize: none;
   }
 
@@ -142,8 +165,8 @@
 
   #wrapper{
     position: absolute;
-    padding-bottom: 7rem;
-    height: 89%;
+    padding-bottom: 12rem;
+    height: 100%;
     top: 5rem;
     left: 20px;
     right: 20px;

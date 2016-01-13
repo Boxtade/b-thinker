@@ -1,5 +1,8 @@
 @import "theme.less";
 
+@w_desktop: 1030px;
+@w_tablet: 560px;
+
 body{
   margin: 0;
   padding: 0;
@@ -21,7 +24,7 @@ body{
   .clearboth;
 }
 
-.button{
+.btn_std {
   background-color: @color_second;
   font-family: @font_regular;
   .bold;
@@ -47,6 +50,14 @@ input[id="btn_account"]{
 
 img[id="title"]{
   background: url(@img_title) no-repeat;
+}
+
+input[id="btn_cancel_img"]{
+  background: url(@img_cancel_btn) no-repeat;
+}
+
+input[id="btn_apply_img"]{
+  background: url(@img_apply_btn) no-repeat;
 }
 
 a{

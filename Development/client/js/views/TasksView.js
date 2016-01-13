@@ -25,6 +25,7 @@ define([
             this.$el.html(this.template({
                 tasks: this.collection.toJSON()
             }));
+            this.style.render();
         },
         deleteTask: function (ev) {
             var model = this.collection.get(ev.currentTarget.id);
