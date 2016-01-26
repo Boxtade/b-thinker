@@ -1,0 +1,221 @@
+// Tablet css style
+// =================
+
+// This css is specific the tablet style and it's based about style.less.
+//
+// It applies between 560px and 1030px wide.
+@media screen and (min-width: @w_tablet) and (max-width: @w_desktop)
+//B
+//====
+//Button style
+//---------
+{
+//**#btn_account : **allows to set the account button and use the .btn_img properties.
+  #btn_account{
+    .displaynone;
+    .btn_img;
+  }
+
+//**#btn_add : **allows to set the add button and use the .btn_img properties.
+  #btn_add{
+    .displayinline;
+    .btn_img;
+  }
+
+//**#btn_apply_img : **allows to set the add image and use the .btn_img properties.
+  #btn_apply_img{
+     .displaynone;
+     .btn_img;
+   }
+
+//**#btn_cancel : **allows to set the cancel image and use the .btn_std properties.
+  #btn_cancel{
+      .btn_std;
+  }
+
+//**#btn_cancel_img : **allows to set the cancel image and use the .btn_img properties.
+  #btn_cancel_img{
+    .displaynone;
+    .btn_img;
+  }
+
+//**.btn_img : **is a global properties for the images button.
+  .btn_img{
+    .floatright;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+
+//**#btn_new_accept : **is a specific id for accept button in new task view. It's to use the .btn_std properties.
+  #btn_new_accept{
+    .btn_std;
+  }
+
+//**#btn_update_accept : **is a specific id for accept button in update task view. It's to use the .btn_std properties.
+  #btn_update_accept{
+    .btn_std;
+  }
+
+//C
+//====
+//**.container_footer : **this class contains the footer information. It may to have a many .container_footer.
+  .container_footer{
+    width: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+
+//D
+//====
+//**.delete : ** it's a specific class for delete button memo and it's to use for event view.
+  .delete{
+     width: 15%;
+     float: right;
+   }
+
+//E
+//====
+//**#edition_box : **this stylized edition box that presents the memo text.Only one in new and update view.
+  #edition_box{
+    border: solid 2px @color_second;
+    border-radius: 15px;
+    padding: 15px;
+    height: 100%;
+  }
+
+//F
+//====
+//**#footer : **it show footer page.
+  #footer{
+    background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
+    height: 5rem;
+    position: fixed;
+    bottom:0px;
+    right: 0px;
+    left: 0px;
+    min-height: 50px;
+  }
+
+//L
+//====
+//**#label_btn_add : **it's label attached at add button. The label must to be hidden in phone mode
+  #label_btn_add{
+    visibility: hidden;
+    font-size: 0;
+  }
+
+//N
+//====
+//**nav label : **it set all label in nav division.
+  nav label{
+    .floatright;
+    color: @color_third;
+    .italic;
+    margin-top: 1.5%;
+  }
+
+//** .navbar-inverse : **it's a header page.
+  .navbar-inverse{
+    padding-right: 5rem;
+    padding-left: 5rem;
+    height: 5rem;
+    background-image: linear-gradient(to top,@color_second 0,@color_primary 100%);
+  }
+
+//P
+//====
+//** p : **is all p tags parameters.
+  p{
+    .floatleft;
+    display: block;
+    margin: 0;
+    padding-left: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    .ultraBold;
+  }
+
+//** .post : **it's memo wrapper in task view.The dimensions values is always static.
+  .post{
+    background-color: @color_accent;
+    width: 180px;
+    height: 130px;
+    .floatleft;
+    margin: 3px;
+  }
+
+//** .post > p : ** all p tags in post class are modified.
+  .post > p{
+    width: 80%;
+    font-size: large;
+  }
+
+//** #post_memo : **it's specific id for textarea in edition views (new and update) that is in #edition_box.
+  #post_memo{
+    font-family: @font_regular;
+    background-color: @color_third;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 300px;
+    resize: none;
+  }
+
+//** .post_text : **this class allows to display memo text in task view.
+  .post_text{
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 80%;
+    display: block;
+    width: 100%;
+  }
+
+//** #post_title : **it's specific id for input in edition views (new and update) that is in #edition_box.
+  #post_title{
+    width: 100%;
+    font-family: @font_regular;
+    background-color: @color_third;
+    .bold;
+    border: none;
+  }
+
+//** #title : **it's the application title parameters in header page.
+  #title{
+    .floatleft;
+    height: 100%;
+    width: 33rem;
+    margin-top: 1rem;
+    background-size: contain;
+  }
+
+//W
+//====
+//** #wrapper : **contains the all contents page depending on the views.
+  #wrapper{
+
+    width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    padding-bottom: 9rem;
+    height: 70rem;
+  }
+
+//** #wrapper_footer : **contains the content global footer page.
+  #wrapper_footer{
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -60px;
+  }
+}

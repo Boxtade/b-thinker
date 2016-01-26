@@ -1,0 +1,107 @@
+// Style css style
+// =================
+
+// This css allows to write global style for all mode such as phone,
+//tablet and desktop mode. It allows to create style about site global positions and dimensions
+// It's serve for import other css like site theme or helper css.
+@import "greeneco.less";
+@import "helper.less";
+
+// **@w_desktop and @w_tablet : ** it's a global variable for each size mode.
+@w_desktop: 1030px;
+@w_tablet: 560px;
+
+//::
+//====
+//**-webkit-scrollbar : ** remove the scrollbar on the screen,
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+//*
+//====
+//** *:focus : **remove the out line when focusing on an object.
+*:focus {
+  outline: none;
+}
+
+//** *:hover : **remove the out line when going on an object.
+*:hover {
+  outline: none;
+}
+
+//A
+//====
+//** a : ** set a color for all "a" tags.
+a{
+   color:@color_third;
+ }
+
+//** a:hover : ** set a color for all "a" tags when going above.
+a:hover{
+  color:@color_accent;
+}
+
+//B
+//====
+//** body : **It's body parameters.
+body{
+  margin: 0;
+  padding: 0;
+  font-family: @font_regular;
+  background-color: @color_third;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+//** .btn_std : **are basic parameters for all buttons.
+.btn_std {
+   background-color: @color_second;
+   font-family: @font_regular;
+   .bold;
+   color:@color_third;
+   border: none;
+   .floatright;
+   margin: 5px;
+   border-radius: 8px;
+ }
+
+//I
+//====
+//** greeneco_img[id="title"] : **allows to load background image in greeneco_img tags, for the site title
+img[id="title"]{
+    background: url(@img_title) no-repeat;
+  }
+
+//** input[id="obj"] : **allows to load background image in input tags.
+input[id="btn_add"]{
+  background: url(@img_add_btn) no-repeat;
+}
+
+input[id="btn_account"]{
+  background: url(@img_account_btn) no-repeat;
+}
+
+input[id="btn_cancel_img"]{
+  background: url(@img_cancel_btn) no-repeat;
+}
+
+input[id="btn_apply_img"]{
+  background: url(@img_apply_btn) no-repeat;
+}
+
+//P
+//====
+//** .post > p : ** all p tags in post class are modified.
+.post > p{
+   width: 85%;
+ }
+
+//Import
+//====
+//Import all style css by modes such as phone,
+//tablet and desktop mode.
+@import "style_desktop.less";
+@import "style_tablet.less";
+@import "style_phone.less";

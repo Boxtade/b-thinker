@@ -2,7 +2,7 @@
  * Created by Kevin on 2015-10-13.
  */
 
-window.url = "boxtade.com";
+window.url = "boxtade.net";
 
 window.onload = initialize;
 
