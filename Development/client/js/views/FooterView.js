@@ -1,7 +1,12 @@
 /**
  * Created by Kevin on 2015-10-14.
+ * @author Kévin Salles
  */
 
+/**
+ * @requires jquery
+ * @requires underscore
+ */
 define([
     'jquery',
     'underscore',

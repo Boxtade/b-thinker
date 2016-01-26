@@ -3,10 +3,21 @@
  */
 
 define([
+    /*
+    * @class
+     * @requires module:xyzcorp/helper
+     * @requires xyzcorp/helper.ShinyWidget#polish
+     */
     'jquery',
     'underscore',
     'backbone'
 ],function($,_,Backbone){
+    /**
+     * @class Task
+     * @classdesc This is a description of the MyClass class.
+     * @requires module:xyzcorp/helper
+     * @requires xyzcorp/helper.ShinyWidget#polish
+     * */
     var Task = Backbone.Model.extend({
         url: "http://"+URL+":5000/tasks",
         defaults:{

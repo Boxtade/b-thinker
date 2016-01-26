@@ -28,7 +28,7 @@ define([
 
             console.log(parse_url);
 
-            if(parse_url != "index.html")
+            if(parse_url != "")
                 window.location.href = base_url;
             console.log(actual_url);
         };

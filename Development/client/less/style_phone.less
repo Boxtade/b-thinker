@@ -1,5 +1,39 @@
-@media screen and (max-width: @w_tablet) {
+// Phone css style
+// =================
 
+// This css is specific the phone style and it's based about style.less.
+//
+// It applies under 560px wide.
+@media screen and (max-width: @w_tablet)
+//B
+//====
+//Button style
+//---------
+{
+//**#btn_add : **allows to set the add button and use the .btn_img properties.
+  #btn_add{
+    .btn_img;
+    .displayinline;
+  }
+
+//**#btn_apply_img : **allows to set the add image and use the .btn_img properties.
+  #btn_apply_img{
+    .displaynone;
+    .btn_img;
+  }
+
+//**#btn_cancel : **allows to set the cancel image and use the .btn_std properties.
+  #btn_cancel{
+    .displaynone;
+  }
+
+//**#btn_cancel_img : **allows to set the cancel image and use the .btn_img properties.
+  #btn_cancel_img{
+    .displaynone;
+    .btn_img;
+  }
+
+//**.btn_img : **is a global properties for the images button.
   .btn_img{
     .floatright;
     background-size: contain;
@@ -8,76 +42,52 @@
     margin-left: 4px;
   }
 
+//**.btn_post : **it's a memo button property. For example, the .delete class.
   .btn_post{
-    width: 8%;
+    width: 2.6rem;
     float: right;
-
   }
 
-  #btn_add{
-    .btn_img;
-    .displayinline;
-  }
-
-  #btn_cancel_img{
-    .displaynone;
-    .btn_img;
-  }
-
-  #btn_apply_img{
-    .displaynone;
-    .btn_img;
-  }
-
+//**#btn_new_accept : **is a specific id for accept button in new task view. It's to use the .btn_std properties.
   #btn_new_accept{
     .displaynone;
   }
 
+//**#btn_update_accept : **is a specific id for accept button in update task view. It's to use the .btn_std properties.
   #btn_update_accept{
     .displaynone;
   }
 
-  #btn_cancel{
-    .displaynone;
+//C
+//====
+//**.container_footer : **this class contains the footer information. It may to have a many .container_footer.
+  .container_footer{
+    width: 21rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0.2em;
   }
 
+//D
+//====
+//**.delete : ** it's a specific class for delete button memo and it's to use for event view.
   .delete{
     .btn_post;
   }
 
-  .update{
-    .btn_post;
-  }
-
-  #label_btn_add{
-    visibility: hidden;
-    font-size: 0;
-  }
-
-  #title{
-    .floatleft;
+//E
+//====
+//**#edition_box : **this stylized edition box that presents the memo text.Only one in new and update view.
+  #edition_box{
+    border: solid 2px @color_second;
+    border-radius: 15px;
+    padding: 17px;
     height: 100%;
-    width: 60%;
-    margin-left: 20px;
-    margin-top: 4px;
-    background-size: contain;
   }
 
-  .navbar-inverse{
-    padding-top: 0.5rem;
-    padding-right: 20px;
-    min-height: 4rem; //4rem
-    height: 4rem; //idem footer
-    background-image: linear-gradient(to top,@color_second 0,@color_primary 100%);
-  }
-
-  #wrapper_footer{
-    position: relative;
-    min-height: 100%;
-    height: 100%;
-    margin: 0 auto -60px;
-  }
-
+//F
+//====
+//**#footer : **it show footer page.
   #footer{
     background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
     height: 4rem;
@@ -88,21 +98,17 @@
     left: 0px;
   }
 
-  .container_footer{
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 0.2em;
+//L
+//====
+//**#label_btn_add : **it's label attached at add button. The label must to be hidden in phone mode
+  #label_btn_add{
+    visibility: hidden;
+    font-size: 0;
   }
 
-  .text-muted{
-    font-size: smaller;
-  }
-
-  .text-muted:last-child{
-    .floatright;
-  }
-
+//N
+//====
+//**nav label : **it set all label in nav division.
   nav label{
     .floatright;
     color: @color_third;
@@ -110,46 +116,18 @@
     margin-top: 1.5%;
   }
 
-
-
-  #edition_box{
-    border: solid 2px @color_second;
-    border-radius: 15px;
-    padding: 15px;
-    height: 100%;
+//**.navbar-inverse : **it's a header page.
+  .navbar-inverse{
+     padding-top: 0.5rem;
+     padding-right: 20px;
+     min-height: 4rem; //4rem
+     height: 4rem; //idem footer
+     background-image: linear-gradient(to top,@color_second 0,@color_primary 100%);
   }
 
-  #post_title{
-    width: 100%;
-    font-family: @font_regular;
-    background-color: @color_third;
-    .bold;
-    border: none;
-  }
-
-  #post_memo{
-    font-family: @font_regular;
-    background-color: @color_third;
-    display: block;
-    border: none;
-    width: 100%;
-    height: 94%;
-    resize: none;
-  }
-
-  .post_text{
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    resize: none;
-    background-color: transparent;
-    word-wrap: break-word;
-    overflow: hidden;
-    height: 80%;
-    display: block;
-  }
-
+//P
+//====
+//**p : **is all p tags parameters.
   p{
     float: left;
     display: block;
@@ -163,15 +141,7 @@
     .ultraBold;
   }
 
-  #wrapper{
-    position: absolute;
-    padding-bottom: 12rem;
-    height: 100%;
-    top: 5rem;
-    left: 20px;
-    right: 20px;
-  }
-
+//**.post : **it's memo wrapper in task view.The dimensions values is always static.
   .post{
     width: 100%;
     background-color: @color_accent;
@@ -179,5 +149,76 @@
     float: left;
     margin: 4px;
     margin-left: 0;
+  }
+
+//**#post_memo : **it's specific id for textarea in edition views (new and update) that is in #edition_box.
+  #post_memo{
+    font-family: @font_regular;
+    background-color: @color_third;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 94%;
+    resize: none;
+  }
+
+//**.post_text : **this class allows to display memo text in task view.
+  .post_text{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 80%;
+    display: block;
+  }
+
+//**#post_title : **it's specific id for input in edition views (new and update) that is in #edition_box.
+  #post_title{
+    width: 100%;
+    font-family: @font_regular;
+    background-color: @color_third;
+    .bold;
+    border: none;
+  }
+
+//T
+//====
+//**.text-muted : **set the footer text.
+  .text-muted{
+    font-size: smaller;
+  }
+
+//**#title : **it's the application title parameters in header page.
+  #title{
+    .floatleft;
+    height: 100%;
+    width: 17rem;
+    margin-left: 20px;
+    margin-top: 0.5rem;
+    background-size: contain;
+  }
+
+//W
+//====
+//**#wrapper : **contains the all contents page depending on the views.
+  #wrapper{
+    position: absolute;
+    padding-bottom: 11rem;
+    height: 98%;
+    top: 5rem;
+    left: 20px;
+    right: 20px;
+  }
+
+//**#wrapper_footer : **contains the content global footer page.
+  #wrapper_footer{
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -60px;
   }
 }

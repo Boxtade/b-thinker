@@ -1,8 +1,10 @@
+
 <% _.each(tasks,function(task){ %>
-<div  class="post" id="<%= task.id %>">
-    <p><%= task.title %></p>
-    <input id="<%= task.id %>" class="delete" src="img/delete.png" type="image">
-    <input id="<%= task.id %>" class="update" src="img/update.png" type="image">
-    <textarea class="post_text" disabled ><%= task.text %></textarea>
-</div>
+    <div  class="post update" id="<%= task.id %>">
+        <p><%= task.title %></p>
+        <input id="<%= task.id %>" class="delete"  src="img/delete.png" type="image">
+        <textarea class="post_text" disabled ><%= task.text %></textarea>
+    </div>
 <% }); %>
+<div style="clear: both;"></div>
+

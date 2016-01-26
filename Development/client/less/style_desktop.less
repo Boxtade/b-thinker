@@ -1,6 +1,45 @@
+// Desktop css style
+// =================
 
-@media screen and (min-width: @w_desktop){
+// This css is specific the desktop style and it's based about style.less.
+//
+// It applies from 1030px wide.
+@media screen and (min-width: @w_desktop)
+//B
+//====
+//Button style
+//---------
+{
+//**#btn_account : **allows to set the account button and use the .btn_img properties.
+  #btn_account{
+    .displaynone;
+    .btn_img;
+  }
 
+//**#btn_add : **allows to set the add button and use the .btn_img properties.
+  #btn_add{
+    .displayinline;
+    .btn_img;
+  }
+
+//**#btn_apply_img : **allows to set the add image and use the .btn_img properties.
+  #btn_apply_img{
+    .displaynone;
+    .btn_img;
+  }
+
+//**#btn_cancel : **allows to set the cancel image and use the .btn_std properties.
+  #btn_cancel{
+    .btn_std;
+  }
+
+//**#btn_cancel_img : **allows to set the cancel image and use the .btn_img properties.
+  #btn_cancel_img{
+    .displaynone;
+    .btn_img;
+  }
+
+//**.btn_img : **is a global properties for the images button.
   .btn_img{
     .floatright;
     background-size: contain;
@@ -9,48 +48,47 @@
     margin: 0.5rem;
   }
 
-  #btn_add{
-    .displayinline;
-    .btn_img;
+//**#btn_new_accept : **is a specific id for accept button in new task view. It's to use the .btn_std properties.
+  #btn_new_accept{
+    .btn_std;
   }
 
-  #btn_account{
-    .displaynone;
-    .btn_img;
+//**#btn_update_accept : **is a specific id for accept button in update task view. It's to use the .btn_std properties.
+  #btn_update_accept{
+    .btn_std;
   }
 
-  #btn_cancel_img{
-    .displaynone;
-    .btn_img;
+//C
+//====
+//**.container_footer : **this class contains the footer information. It may to have a many .container_footer.
+  .container_footer{
+    width: 80%;
+    padding-right: 8rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
   }
 
-  #btn_apply_img{
-    .displaynone;
-    .btn_img;
+//D
+//====
+//**.delete : ** it's a specific class for delete button memo and it's to use for event view.
+  .delete{
+    width: 10%;
+    float: right;
   }
 
-  #title{
-    .floatleft;
-    height: 100%;
-    width: 50rem;
-    margin-top: 4px;
-    margin-left: 50px;
-    background-size: contain;
+//E
+//====
+//**#edition_box : **this stylized edition box that presents the memo text.Only one in new and update view.
+  #edition_box{
+    border: solid 2px @color_second;
+    border-radius: 15px;
+    padding: 15px;
   }
 
-  .navbar-inverse{
-    padding-right: 50px;
-    height: 6rem;
-    background-image: linear-gradient(to top,@color_second 0,@color_primary 100%);
-  }
-
-  #wrapper_footer{
-    position: relative;
-    min-height: 100%;
-    height: 100%;
-    margin: 0 auto -60px;
-  }
-
+//F
+//====
+//**#footer : **it show footer page.
   #footer{
     background-image: linear-gradient(to bottom,@color_second 0,@color_primary 100%);
     height: 6rem;
@@ -61,18 +99,9 @@
     min-height: 50px;
   }
 
-  .text-muted:last-child{
-    .floatright;
-  }
-
-  .container_footer{
-    width: 80%;
-    padding-right: 8rem;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 2rem;
-  }
-
+//N
+//====
+//**nav label : **it set all label in nav division.
   nav label{
     .floatright;
     color: @color_third;
@@ -80,42 +109,38 @@
     margin-top: 1.5%;
   }
 
-  #btn_new_accept{
-    .btn_std;
+//**.navbar-inverse : **it's a header page.
+  .navbar-inverse{
+    padding-right: 50px;
+    height: 6rem;
+    background-image: linear-gradient(to top,@color_second 0,@color_primary 100%);
   }
 
-  #btn_update_accept{
-    .btn_std;
-  }
+//P
+//====
+//**p : **is all p tags parameters.
+  p{
+     .floatleft;
+     display: block;
+     margin: 0;
+     padding-left: 2px;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     word-wrap: break-word;
+     .ultraBold;
+   }
 
-  #btn_cancel{
-    .btn_std;
-  }
+//**.post : **it's memo wrapper in task view.The dimensions values is always static.
+  .post{
+     width: 200px;
+     height: 100px;
+     background-color: @color_accent;
+     .floatleft;
+     margin: 2px;
+   }
 
-  .delete{
-    width: 10%;
-    float: right;
-  }
-
-  .update{
-    width: 10%;
-    float: right;
-  }
-
-  #edition_box{
-    border: solid 2px @color_second;
-    border-radius: 15px;
-    padding: 15px;
-  }
-
-  #post_title{
-    width: 100%;
-    font-family: @font_regular;
-    background-color: @color_third;
-    .bold;
-    border: none;
-  }
-
+//**#post_memo : **it's specific id for textarea in edition views (new and update) that is in #edition_box.
   #post_memo{
     font-family: @font_regular;
     background-color: @color_third;
@@ -126,44 +151,62 @@
     resize: none;
   }
 
+//**.post_text : **this class allows to display memo text in task view.
   .post_text{
-    width: 194px;
-    margin-left: auto;
-    margin-right: auto;
+     width: 194px;
+     margin-left: auto;
+     margin-right: auto;
+     border: none;
+     resize: none;
+     background-color: transparent;
+     word-wrap: break-word;
+     overflow: hidden;
+     height: 80%;
+     display: block;
+   }
+
+//**#post_title : **it's specific id for input in edition views (new and update) that is in #edition_box.
+  #post_title{
+    width: 100%;
+    font-family: @font_regular;
+    background-color: @color_third;
+    .bold;
     border: none;
-    resize: none;
-    background-color: transparent;
-    word-wrap: break-word;
-    overflow: hidden;
-    height: 70%;
-    display: block;
   }
 
-  p{
-    float: left;
-    display: block;
-    margin: 0;
-    padding-left: 2px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    .ultraBold;
+//T
+//====
+//**.text-muted:last-child : **set the last child footer text.
+  .text-muted:last-child{
+    .floatright;
   }
 
+//**#title : **it's the application title parameters in header page.
+  #title{
+    .floatleft;
+    height: 100%;
+    width: 50rem;
+    margin-top: 4px;
+    margin-left: 50px;
+    background-size: contain;
+  }
+
+//W
+//====
+//**#wrapper : **contains the all contents page depending on the views.
   #wrapper{
-    clear: both;
+    .clearboth;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
   }
 
-  .post{
-    width: 200px;
-    height: 100px;
-    background-color: @color_accent;
-    float: left;
-    margin: 2px;
+//**#wrapper_footer : **contains the content global footer page.
+  #wrapper_footer{
+    position: relative;
+    min-height: 100%;
+  height: 100%;
+    margin: 0 auto -60px;
   }
 }

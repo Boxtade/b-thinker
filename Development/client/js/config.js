@@ -1,6 +1,9 @@
 /**
- * Created by kvins on 11/01/2016.
+ * @file Config file for requires.js and constant values
+ * @author Kévin Salles
  */
+
+
 URL = "boxtade.com";
 VERSION = "1.1.0";
 YEAR = new Date().getFullYear();
