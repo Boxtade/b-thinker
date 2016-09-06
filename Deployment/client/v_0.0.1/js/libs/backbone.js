@@ -64,7 +64,7 @@
 
   // Turn on `emulateJSON` to support legacy servers that can't deal with direct
   // `application/json` requests ... this will encode the body as
-  // `application/x-www-form-urlencoded` instead and will send the model in a
+  // `application/x-job_b-thinker-form-urlencoded` instead and will send the model in a
   // form param named `model`.
   Backbone.emulateJSON = false;
 
@@ -1349,7 +1349,7 @@
   //
   // Turn on `Backbone.emulateHTTP` in order to send `PUT` and `DELETE` requests
   // as `POST`, with a `_method` parameter containing the true HTTP method,
-  // as well as all requests with the body as `application/x-www-form-urlencoded`
+  // as well as all requests with the body as `application/x-job_b-thinker-form-urlencoded`
   // instead of `application/json` with the model in a param named `model`.
   // Useful when interfacing with server-side languages like **PHP** that make
   // it difficult to read the body of `PUT` requests.
@@ -1378,7 +1378,7 @@
 
     // For older servers, emulate JSON by encoding the request into an HTML-form.
     if (options.emulateJSON) {
-      params.contentType = 'application/x-www-form-urlencoded';
+      params.contentType = 'application/x-job_b-thinker-form-urlencoded';
       params.data = params.data ? {model: params.data} : {};
     }
 

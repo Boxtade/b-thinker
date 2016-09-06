@@ -1,5 +1,5 @@
 var express = require('express');
-task = require('./routes/task');
+var task = require('./../../../Development/server/routes/task');
 var cors = require('cors');
 
 
@@ -22,13 +22,12 @@ function start() {
     app.listen(5000); // Look at the asynchronous.
     console.log("Server has started.");
     console.log('Server running at http://localhost:5000/');
-}
+};
 
 app.post('/tasks',task.create_task);
 app.get("/tasks",task.get_tasks);
 app.get("/tasks/:id",task.get_task);
 app.put('/tasks/:id',task.update_task);
 app.delete('/tasks/:id',task.delete_task);
-
 
 module.exports.start = start;
