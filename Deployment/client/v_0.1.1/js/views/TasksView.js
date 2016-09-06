@@ -13,7 +13,7 @@ define([
         template: _.template(TaskTemplate),
         events: {
             'click .delete': 'confirmModal',
-            'click .update': 'updateTask'
+            'click .post': 'updateTask',
         },
         initialize: function () {
             _.bindAll(this, 'render');
@@ -23,9 +23,10 @@ define([
         },
         render: function(){
             this.$el.html(this.template({
-                tasks: this.collection.toJSON()
+                tasks: this.collection.toJSON(),
+                func:this.updateTask
             }));
-            this.style.render();
+            //this.style.render();
         },
         deleteTask: function (ev) {
             var model = this.collection.get(ev.currentTarget.id);
@@ -33,10 +34,10 @@ define([
             model.destroy().complete(function(){self.render();});
         },
         updateTask:function(ev){
-            if(ev.target.className == "post_text") {
+            // if(ev.currentTarget.className == "post_text") {
                 var model = this.collection.get(ev.currentTarget.id);
                 this.navigate("updateTask/" + model.id, {trigger: true});
-            }
+            //}
         },
         confirmModal:function(ev){
             var r = confirm("Do you want to delete this memo ?");

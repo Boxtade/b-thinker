@@ -4,8 +4,8 @@
  */
 
 
-URL = "boxtade.info";
-VERSION = "0.1.0";
+URL = "boxtade.net";
+VERSION = "0.1.1";
 YEAR = new Date().getFullYear();
 CONTACT = "boxtade.com";
 

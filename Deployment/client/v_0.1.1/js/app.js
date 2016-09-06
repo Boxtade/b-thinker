@@ -14,7 +14,7 @@ define([
 ],
     function($,_, Backbone, Style, Router){
         var initialize = function() {
-            //initialize_url();
+            initialize_url();
             _.extend(Backbone.View.prototype, {
                 style: new Style()
             });
