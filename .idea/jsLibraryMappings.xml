@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/Deployment/server/v_0.0.0" libraries="{b-thinker/Deployment/server/v_0.0.0/node_modules}" />
+    <file url="file://$PROJECT_DIR$/Development/server" libraries="{b-thinker/Development/server/node_modules}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>

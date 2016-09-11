@@ -9,14 +9,20 @@ define([
     'views/HeaderView',
     'views/TasksView',
     'views/NewTaskView',
-    'views/UpdateTaskView'
-], function(_, Backbone, HeaderView,TasksView,NewTaskView,UpdateTaskView) {
+    'views/UpdateTaskView',
+    'views/LoginView',
+    'views/ErrorView',
+    'views/AccountView'
+], function(_, Backbone,HeaderView,TasksView,NewTaskView,UpdateTaskView,LoginView,ErrorView,AccountView) {
     var AppRouter = Backbone.Router.extend({
         routes: {
             "newTask": "newTask",
-            "Tasks": "tasks",
+            "tasks": "tasks",
             "updateTask/:id": "updateTask",
-            '*actions': "tasks"
+            'login': "login",
+            'error/:msg': "error",
+            'account':"account",
+            '*actions': "login"
         },
         route: function(route, name, callback) {
             return Backbone.Router.prototype.route.call(this, route, name, callback);
@@ -26,35 +32,66 @@ define([
     var initialize = function(){
         var app_router = new AppRouter;
         headerView = new HeaderView();
-        headerView.render("");
         newTaskView = new NewTaskView();
         updateTaskView = new UpdateTaskView();
         tasksView = new TasksView();
-
+        loginView = new LoginView();
+        errorView = new ErrorView();
+        accountView = new AccountView();
 
         app_router.on('route:newTask', function () {
-            headerView.render("newTask");
-            if(newTaskView == undefined)
-                tasksView.initialize();
-            newTaskView.render();
+            if(TOKEN !== undefined){
+                headerView.render("newTask");
+                newTaskView.render();
+            }
+            else{
+                app_router.navigate('login',true);
+            }
         });
 
         app_router.on('route:updateTask', function (id) {
-            headerView.render("updateTask");
-            if(tasksView != undefined)
-                tasksView.destroy();
-            updateTaskView.render(id);
+            if(TOKEN !== undefined){
+                headerView.render("updateTask");
+                updateTaskView.render(id);
+            }
+            else{
+                app_router.navigate('login',true);
+            }
         });
 
         app_router.on('route:tasks', function () {
-            headerView.render("");
-            if(newTaskView != undefined)
-                newTaskView.destroy();
+            if(TOKEN !== undefined){
+                tasksView.render();
+                headerView.render("");
+            }
+            else{
+                app_router.navigate('login',true);
+            }
+        });
 
-            if(tasksView == undefined)
-                initialize();
-            else
-                tasksView.initialize();
+        app_router.on('route:account', function () {
+            if(TOKEN !== undefined){
+                headerView.render("account");
+                accountView.render();
+            }
+            else{
+                app_router.navigate('login',true);
+            }
+        });
+
+        app_router.on('route:login', function () {
+            if(TOKEN === undefined){
+                headerView.destroy();
+                loginView.render();
+            }
+            else{
+                app_router.navigate('tasks',true);
+            }
+        });
+
+        app_router.on('route:error', function (msg) {
+            headerView.destroy();
+            errorView.render(msg);
         });
 
         Backbone.View.prototype.navigate = function (loc) {
@@ -65,6 +102,7 @@ define([
             app_router.navigate(loc, true);
         };
 
+        //Backbone.history.start({pushState: true});
         Backbone.history.start();
     };
 

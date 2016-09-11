@@ -1,0 +1,43 @@
+
+<style>
+    .option:hover{
+        color:#555;
+        cursor:pointer;
+        border: none !important;
+        border-bottom: 1px solid #ddd !important;
+        background-color: #f6f7f0 !important;
+    }
+    .option{
+        font-weight: bolder;
+        border: none !important;
+        color:#555;
+        border-bottom: 1px solid #ddd !important;
+        background-color: #f6f7f0 !important;
+    }
+    .active{
+        background-color: #d0f14e !important;
+    }
+    .active:hover{
+        border: none !important;
+        background-color: #d0f14e !important;
+    }
+    @media (min-width: 1200px){
+        .container {
+            width: 1170px !important;
+        }
+    }
+    .container {
+        width: 100%;
+    }
+</style>
+
+<div class="container">
+    <h1>Account's <%= email %></h1>
+    <ul class="nav nav-tabs">
+        <% _.each(opt.options,function(option,func){ %>
+            <li ><a class="option" id="<%= option.name %>"><%= option.name %></a></li>
+        <% }); %>
+    </ul>
+    <br>
+    <div id="account_panel"></div>
+</div>

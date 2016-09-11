@@ -1,0 +1,86 @@
+<style>
+    #login_modal{
+        border-radius: 5px;
+        border: solid black 2px;
+        display: none;
+        position: relative;
+        background-color: #f6f7f0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 350px;
+    }
+    #modal-content{
+        padding: 10px 10px;
+        width: 100%;
+    }
+    .container{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .field{
+        margin-top: 20px;
+        clear:both;
+        float: left;
+        width: 100%
+    }
+    #btn_connexion{
+        background-color: #d0f14e;
+        border: none;
+        padding: 5px;
+    }
+    h1{
+        text-align: center;
+    }
+    #fail_modal{
+        color: orangered;
+        text-align: center;
+    }
+    .close{
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 0;
+        color: #f21111;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .7;
+    }
+    .cancelbtn{
+        background-color: orangered;
+        border: none;
+        padding: 5px;
+        opacity: .9;
+        color: white
+    }
+    #btn_forget{
+        background-color: #f6f7f0;
+        border:none;
+        padding: 5px;
+        float: right;
+        color:#2b669a;
+        font-weight: bolder;
+    }
+</style>
+
+<div id="login_modal" >
+    <form id="modal-content">
+        <div>
+            <span class="close" title="Close">&times;</span>
+            <h1>Login</h1>
+        </div>
+
+        <h4 id="fail_modal"></h4>
+
+        <div class="container">
+            <input id="field_email" class="field" type="text" placeholder="Your address email" required>
+            <input id="field_password" class="field" type="password" placeholder="Your password" required>
+            <button type="button" id="btn_connexion" class="field">Login</button>
+            <input id="check_remenberMe" type="checkbox"> Remember me
+        </div>
+
+        <div class="container">
+            <button class="cancelbtn" type="button" >Cancel</button>
+            <button id="btn_forget" type="button">Forgot password ?</button>
+        </div>
+    </form>
+</div>
