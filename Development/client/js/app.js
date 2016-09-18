@@ -48,7 +48,7 @@ define([
         var pop_success = function(msg){
             var div = document.createElement("div");
             div.setAttribute("class","alert_box alert alert-success");
-            div.innerHTML = '<a class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Danger!   </strong>'+msg;
+            div.innerHTML = '<a class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success!   </strong>'+msg;
             document.body.appendChild(div);
         };
 

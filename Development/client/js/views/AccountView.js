@@ -58,20 +58,29 @@ define([
             var self = this;
             var oldpwd = $("#old_pwd")[0].value;
             var newpwd = $("#new_pwd")[0].value;
-            new this.password.Change(TOKEN,oldpwd,newpwd,function(json){
-                console.log(json.response);
-                if(json.res){
-                    self.cancel_pwd();
-                }
-                else{
-                    self.cancel_pwd();
-                    self.pop_alert("error",json.response);
-                }
-            });
+            var confirmpwd = $("#confirm_pwd")[0].value;
+            if(newpwd === confirmpwd){
+                new this.password.Change(TOKEN,oldpwd,newpwd,function(json){
+                    console.log(json.response);
+                    if(json.res){
+                        self.cancel_pwd();
+                        self.pop_alert("success",json.response);
+                    }
+                    else{
+                        self.cancel_pwd();
+                        self.pop_alert("error",json.response);
+                    }
+                });
+            }
+            else{
+                self.pop_alert("error","Passwords do not match.");
+            }
+
         },
         cancel_pwd:function(){
             $("#old_pwd")[0].value = "";
             $("#new_pwd")[0].value = "";
+            $("#confirm_pwd")[0].value = "";
         },
         _setPanel:function(s){
             switch(s){

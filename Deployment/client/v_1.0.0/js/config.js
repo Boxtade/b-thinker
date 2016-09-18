@@ -4,7 +4,7 @@
  */
 
 
-URL = "boxtade.net";
+URL = "b-thinker.com";
 PORT = "5002"
 VERSION = "1.0.0";
 YEAR = new Date().getFullYear();

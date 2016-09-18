@@ -32,7 +32,7 @@
 </style>
 
 <div class="container">
-    <h1>Account's <%= email %></h1>
+    <h1><%= email %></h1>
     <ul class="nav nav-tabs">
         <% _.each(opt.options,function(option,func){ %>
             <li ><a class="option" id="<%= option.name %>"><%= option.name %></a></li>

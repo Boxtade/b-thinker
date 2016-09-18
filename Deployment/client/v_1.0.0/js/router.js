@@ -102,6 +102,7 @@ define([
             app_router.navigate(loc, true);
         };
 
+        //Backbone.history.start({pushState: true});
         Backbone.history.start();
     };
 

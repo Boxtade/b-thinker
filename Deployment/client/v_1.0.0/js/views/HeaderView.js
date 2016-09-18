@@ -25,6 +25,7 @@ define([
         initialize: function () {
             new FooterView();
             var self = this;
+            this.task = new Task();
             $( window ).resize(function(){self.style.render()});
         },
         destroy:function(){
@@ -39,9 +40,10 @@ define([
         },
         acceptTask:function(){
             var route = this.style.getPathUrl();
+            console.log(route);
             switch (route[0]){
-                case "#updateTask": new Task().save_task(route[1]);break;
-                case "#newTask": new Task().save_task();break;
+                case "#updateTask": this.updateTask(route[1]);break;
+                case "#newTask": this.saveTask();break;
             }
         },
         cancelTask:function(){
@@ -53,6 +55,34 @@ define([
         },
         account:function(){
             this.navigate("account",{trigger:true});
+        },
+        updateTask:function(id){
+            var title = $("#post_title")[0].value;
+            var content = $("#post_memo")[0].value;
+
+            var self = this;
+            this.task.update(TOKEN,id,title,content,function (json) {
+                if(json.res) {
+                    self.cancelTask();
+                }
+                else{
+                    self.navigate('error/'+json.response, {trigger: true});
+                }
+            });
+        },
+        saveTask:function(){
+            var title = $("#post_title")[0].value;
+            var content = $("#post_memo")[0].value;
+            var self = this;
+
+            this.task.create(TOKEN,title,content,function(json){
+                if(json.res){
+                    self.cancelTask();
+                }
+                else{
+                    self.navigate('error/'+json.response, {trigger: true});
+                }
+            });
         }
     });
 

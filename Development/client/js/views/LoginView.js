@@ -75,13 +75,13 @@ define([
             }
             else{
                 if(pwd != confirmPwd){
-                    $("#fail_modal").text("passwords don't match. Retry, please.");
+                    $("#fail_modal").text("Passwords don't match. Retry, please.");
                 }
                 else{
-                    console.log(email);
                     new this.user.Register(email,pwd,function(json){
                         if(json.res){
                             self.modal_close();
+                            self.pop_alert("success",json.response);
                             self.modal_login();
                         }
                         else{
@@ -130,6 +130,7 @@ define([
                 new this.password.Code(email,function(json){
                     if(json.res){
                         self.user.email = email;
+                        self.pop_alert("success",json.response);
                         self.modal_code()
                     }
                     else{
@@ -151,6 +152,7 @@ define([
                 new this.password.Reset(email,code,password, function (json) {
                     if (json.res) {
                         self.modal_login()
+                        self.pop_alert("success",json.response);
                     }
                     else {
                         $("#fail_modal").text(json.response);
