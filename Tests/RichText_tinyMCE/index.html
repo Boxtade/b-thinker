@@ -1,0 +1,821 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>b-thinker</title>
+
+    <!--<script src="js/helper/import_bootstrap.js"></script>-->
+    <!--<script>import_bootstrap();</script>-->
+
+    <!--[if (gt IE 9) | (!IE)]><!-->
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="./lib/jquery-2.2.4.min.js"></script>
+    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" href="less/style.less"><style type="text/css" id="less:less-style">@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900,900italic,700italic,500italic,500,400italic,300italic,300,100italic,100);
+.clearboth {
+  clear: both;
+}
+.floatleft {
+  float: left;
+}
+.floatright {
+  float: right;
+}
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+.ultraBold {
+  font-weight: 900;
+}
+.displayinline {
+  display: inline;
+}
+.displaynone {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+*:focus {
+  outline: none;
+}
+*:hover {
+  outline: none;
+}
+a {
+  color: #f6f7f0;
+}
+.alert_box {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  right: 30%;
+}
+a:hover {
+  color: #d0f14e;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f6f7f0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.btn_std {
+  background-color: #4c4c4c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #f6f7f0;
+  border: none;
+  float: right;
+  margin: 5px;
+  border-radius: 8px;
+}
+img[id="title"] {
+  background: url('http://b-thinker.com/img/greeneco_img/title.png') no-repeat;
+}
+input[id="btn_add"] {
+  background: url("http://b-thinker.com/img/greeneco_img/add_btn.png") no-repeat;
+}
+input[id="btn_account"] {
+  background: url('http://b-thinker.com/img/greeneco_img/account_btn.png') no-repeat;
+}
+input[id="btn_cancel_img"] {
+  background: url("http://b-thinker.com/img/greeneco_img/cancel.png") no-repeat;
+}
+input[id="btn_apply_img"] {
+  background: url("http://b-thinker.com/img/greeneco_img/apply.png") no-repeat;
+}
+input[id="btn_logout"] {
+  background: url("http://b-thinker.com/img/greeneco_img/logout.png") no-repeat;
+}
+input[id="btn_home"] {
+  background: url("http://b-thinker.com/img/greeneco_img/home_btn.png") no-repeat;
+}
+.post > p {
+  width: 85%;
+}
+@media screen and (min-width: 1030px) {
+  #btn_account {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  #btn_add {
+    display: inline;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  #btn_apply_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  #btn_cancel {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_cancel_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  .btn_img {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  #btn_new_accept {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_update_accept {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_login {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+    color: #d0f14e;
+  }
+  #btn_register {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_logout {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  #btn_home {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+  }
+  .container_footer {
+    width: 80%;
+    padding-right: 8rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+  .delete {
+    width: 10%;
+    float: right;
+  }
+  #edition_box {
+    border: solid 2px #4c4c4c;
+    border-radius: 15px;
+    padding: 15px;
+  }
+  #footer {
+    background-image: linear-gradient(to bottom, #4c4c4c 0, #191919 100%);
+    height: 6rem;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    min-height: 50px;
+  }
+  nav label {
+    float: right;
+    color: #f6f7f0;
+    font-style: italic;
+    margin-top: 1.5%;
+  }
+  .navbar-inverse {
+    padding-right: 50px;
+    height: 6rem;
+    background-image: linear-gradient(to top, #4c4c4c 0, #191919 100%);
+  }
+  p {
+    float: left;
+    display: block;
+    margin: 0;
+    padding-left: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-weight: 900;
+  }
+  .post {
+    width: 200px;
+    height: 100px;
+    background-color: #d0f14e;
+    float: left;
+    margin: 2px;
+  }
+  #post_memo {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 300px;
+    resize: none;
+  }
+  .post_text {
+    width: 194px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 80%;
+    display: block;
+  }
+  #post_title {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    font-weight: 700;
+    border: none;
+  }
+  .text-muted:last-child {
+    float: right;
+  }
+  #title {
+    float: left;
+    height: 100%;
+    width: 50rem;
+    margin-top: 4px;
+    margin-left: 50px;
+    background-size: contain;
+  }
+  #wrapper {
+    clear: both;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+  }
+  #wrapper_footer {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -60px;
+  }
+}
+@media screen and (min-width: 560px) and (max-width: 1030px) {
+  #btn_account {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  #btn_add {
+    display: inline;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  #btn_apply_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  #btn_cancel {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_cancel_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  .btn_img {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  #btn_new_accept {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_update_accept {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_login {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+    color: #d0f14e;
+  }
+  #btn_register {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_logout {
+    display: inline;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  #btn_home {
+    display: inline;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.5rem;
+  }
+  .container_footer {
+    width: 560px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+  .delete {
+    width: 15%;
+    float: right;
+  }
+  #edition_box {
+    border: solid 2px #4c4c4c;
+    border-radius: 15px;
+    padding: 15px;
+    height: 100%;
+  }
+  #footer {
+    background-image: linear-gradient(to bottom, #4c4c4c 0, #191919 100%);
+    height: 5rem;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    min-height: 50px;
+  }
+  #label_btn_add {
+    visibility: hidden;
+    font-size: 0;
+  }
+  nav label {
+    float: right;
+    color: #f6f7f0;
+    font-style: italic;
+    margin-top: 1.5%;
+  }
+  .navbar-inverse {
+    padding-right: 5rem;
+    padding-left: 5rem;
+    height: 5rem;
+    background-image: linear-gradient(to top, #4c4c4c 0, #191919 100%);
+  }
+  p {
+    float: left;
+    display: block;
+    margin: 0;
+    padding-left: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-weight: 900;
+  }
+  .post {
+    background-color: #d0f14e;
+    width: 180px;
+    height: 130px;
+    float: left;
+    margin: 3px;
+  }
+  .post > p {
+    width: 80%;
+    font-size: large;
+  }
+  #post_memo {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 300px;
+    resize: none;
+  }
+  .post_text {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 80%;
+    display: block;
+    width: 100%;
+  }
+  #post_title {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    font-weight: 700;
+    border: none;
+  }
+  #title {
+    float: left;
+    height: 100%;
+    width: 33rem;
+    margin-top: 1rem;
+    background-size: contain;
+  }
+  #wrapper {
+    width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    padding-bottom: 9rem;
+    height: 70rem;
+  }
+  #wrapper_footer {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -60px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #btn_account {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  #btn_add {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+    display: inline;
+  }
+  #btn_apply_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  #btn_cancel {
+    display: none;
+  }
+  #btn_cancel_img {
+    display: none;
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  .btn_img {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  .btn_post {
+    width: 2.6rem;
+    float: right;
+  }
+  #btn_new_accept {
+    display: none;
+  }
+  #btn_update_accept {
+    display: none;
+  }
+  #btn_login {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+    color: #d0f14e;
+  }
+  #btn_register {
+    background-color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #f6f7f0;
+    border: none;
+    float: right;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  #btn_logout {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  #btn_home {
+    float: right;
+    border-radius: 8px;
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4px;
+  }
+  .container_footer {
+    width: 21rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0.2em;
+  }
+  .delete {
+    width: 2.6rem;
+    float: right;
+  }
+  #edition_box {
+    border: solid 2px #4c4c4c;
+    border-radius: 15px;
+    padding: 17px;
+    height: 100%;
+  }
+  #footer {
+    background-image: linear-gradient(to bottom, #4c4c4c 0, #191919 100%);
+    height: 4rem;
+    min-height: 4rem;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+  }
+  #label_btn_add {
+    visibility: hidden;
+    font-size: 0;
+  }
+  nav label {
+    float: right;
+    color: #f6f7f0;
+    font-style: italic;
+    margin-top: 1.5%;
+  }
+  .navbar-inverse {
+    padding-top: 0.5rem;
+    padding-right: 20px;
+    min-height: 4rem;
+    height: 4rem;
+    background-image: linear-gradient(to top, #4c4c4c 0, #191919 100%);
+  }
+  p {
+    float: left;
+    display: block;
+    margin: 0;
+    padding-left: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-size: large;
+    font-weight: 900;
+  }
+  .post {
+    width: 100%;
+    background-color: #d0f14e;
+    height: 150px;
+    float: left;
+    margin: 4px;
+    margin-left: 0;
+  }
+  #post_memo {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    display: block;
+    border: none;
+    width: 100%;
+    height: 94%;
+    resize: none;
+  }
+  .post_text {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    word-wrap: break-word;
+    overflow: hidden;
+    height: 80%;
+    display: block;
+  }
+  #post_title {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7f0;
+    font-weight: 700;
+    border: none;
+  }
+  .text-muted {
+    font-size: smaller;
+  }
+  #title {
+    float: left;
+    height: 100%;
+    width: 17rem;
+    margin-left: 20px;
+    margin-top: 0.5rem;
+    background-size: contain;
+  }
+  #wrapper {
+    position: absolute;
+    padding-bottom: 11rem;
+    height: 98%;
+    top: 5rem;
+    left: 20px;
+    right: 20px;
+  }
+  #wrapper_footer {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -60px;
+  }
+}
+</style>
+    <!--<![endif]-->
+    <!--[if lte IE 9]>
+    <script src="js/helper/not_compatibility_ie8.js"></script>
+    <![endif]-->
+
+</head>
+<body style="overflow-x: hidden; overflow-y: visible;">
+    <header id="header">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <img id="title" src="img/transparent.png">
+    <input id="btn_logout" src="img/transparent.png" type="image" style="display: none;">
+    <input id="btn_home" src="img/transparent.png" type="image" style="display: none;">
+    <input id="btn_account" src="img/transparent.png" type="image" style="display: none;">
+    <div id="wrapper_add_btn" style="display: none;">
+        <label id="label_btn_add">Add to-do</label>
+        <input id="btn_add" type="image" src="img/transparent.png">
+    </div>
+    <input id="btn_cancel_img" type="image" src="img/transparent.png" style="display: none;">
+    <input id="btn_apply_img" type="image" src="img/transparent.png" style="display: none;">
+</nav>
+
+
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+  selector:'textarea#post_memo',
+  skin_url: './b-thinker',
+  branding:false,
+  content_style: ".mce-content-body{background-color:#f6f7f0}",
+  plugins: [
+  'advlist autolink lists link image charmap print preview anchor',
+  'searchreplace visualblocks code fullscreen',
+  'insertdatetime media table contextmenu paste code'
+  ],
+  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+});
+</script>
+
+
+
+
+
+</header>
+    <div id="wrapper">
+<div id="edition_box">
+    <input type="text" id="post_title" placeholder="title" value="http://skin.tinymce.com/">
+    <textarea id="post_memo" placeholder="Write your reminder here ..."></textarea>
+</div>
+
+<p class="message"></p></div>
+    <div id="wrapper_footer"><div id="footer">
+    <div class="container_footer">
+        <p class="text-muted">b-thinker v 1.0.0. &nbsp; All Rights Reserved. &nbsp;</p>
+        <p class="text-muted">Copyright 2015-2017 by <a href="http://boxtade.com">boxtade.com</a> &nbsp;</p>
+    </div>
+</div></div>
+
+   
+
+</body></html>
